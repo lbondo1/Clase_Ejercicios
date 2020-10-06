@@ -6,7 +6,7 @@ resource "aws_instance" "Terraform-Practico-Nuevo" {
   ]
   subnet_id = aws_subnet.Practico-Nuevo-private-subnet.id
   tags = {
-    Name = "terraform-practico2-instance"
+    Name = "terraform-Practico-Nuevo-instance"
   }
   connection {
       type = "ssh"
