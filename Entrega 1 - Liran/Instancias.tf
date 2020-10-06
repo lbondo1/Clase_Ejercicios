@@ -11,7 +11,7 @@ resource "aws_instance" "Terraform-Practico-Nuevo" {
   connection {
       type = "ssh"
       user = "root"
-      private_key = file("C:\\Users\liran\Documents\ORT\Implementación De Soluciones Cloud\Terraform-Practico-Nuevo.pem") C:\
+      private_key = file("/home/kali/Documents/Repositorio - Github/Clase_Ejercicios/Entrega 1 - Liran/Terraform-Practico-Nuevo.pem")/home/kali/Documents/Repositorio - Github/Clase_Ejercicios/Entrega 1 - Liran/
       host = self.public_ip
       }
       provisioner "remote-exec" {
