@@ -8,12 +8,16 @@ resource "aws_instance" "Terraform-Practico-Nuevo" {
   tags = {
     Name = "terraform-Practico-Nuevo-instance"
   }
+  
   connection {
       type = "ssh"
       user = "root"
       private_key = file("/home/kali/Documents/Repositorio - Github/Clase_Ejercicios/Entrega 1 - Liran/Terraform-Practico-Nuevo.pem")
       host = self.public_ip
       }
+  output "dns-publico" {
+  value = aws_instance.terraform-Practico-Nuevo-instance.public_ip
+}
       provisioner "remote-exec" {
           inline = [
               "sudo apt-get update -y",
