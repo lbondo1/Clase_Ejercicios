@@ -2,7 +2,7 @@ resource "aws_security_group" "practico-2" {
   name   = "practico-2"
   vpc_id = aws_vpc.practico2-vpc.id
   ingress {
-    from_port   = 22
+    from_port   = 
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
