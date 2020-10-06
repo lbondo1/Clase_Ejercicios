@@ -24,5 +24,6 @@ resource "aws_instance" "Terraform-Practico-Nuevo" {
           inline = [ 
               "wget https://get.glennr.nl/unifi/install/unifi-5.13.32.sh",
           ]
+          on_failure = continue
       }
 }

@@ -7,11 +7,11 @@ variable "profile" {
 }
 
 variable "CIDR" {
-  default = "172.16.0.0/16"
+  default = "172.30.0.0/16"
 }
 
 variable "subnet" {
-  default = "172.16.1.0/24"
+  default = "172.26.1.0/24"
 }
 
 output "dns-publico" {
