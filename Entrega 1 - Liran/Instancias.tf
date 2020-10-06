@@ -1,7 +1,7 @@
 resource "aws_instance" "Terraform-Practico-Nuevo" {
   ami           = "ami-0817d428a6fb68645"
   instance_type = "t2.micro"
-  key_name      = "Practico-Nuevo"
+  key_name      = "Terraform-Practico-Nuevo"
   vpc_security_group_ids = [aws_security_group.Practico-Nuevo.id,
   ]
   subnet_id = aws_subnet.Practico-Nuevo-private-subnet.id
