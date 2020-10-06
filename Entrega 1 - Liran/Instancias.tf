@@ -17,11 +17,7 @@ resource "aws_instance" "Terraform-Practico-Nuevo" {
       provisioner "remote-exec" {
           inline = [
               "sudo apt-get update -y",
-          ]
-          inline = [ 
               "sudo apt-get install -y ca-certificates wget",
-          ]
-          inline = [ 
               "wget https://get.glennr.nl/unifi/install/unifi-5.13.32.sh",
           ]
           on_failure = continue
