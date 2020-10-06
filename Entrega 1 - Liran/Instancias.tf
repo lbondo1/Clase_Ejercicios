@@ -15,10 +15,7 @@ resource "aws_instance" "Terraform-Practico-Nuevo" {
       private_key = file("/home/kali/Documents/Repositorio - Github/Clase_Ejercicios/Entrega 1 - Liran/Terraform-Practico-Nuevo.pem")
       host = self.public_ip
       }
-  output "dns-publico" {
-  value = aws_instance.terraform-Practico-Nuevo-instance.public_ip
-}
-      provisioner "remote-exec" {
+        provisioner "remote-exec" {
           inline = [
               "sudo apt-get update -y",
               "sudo apt-get install -y ca-certificates wget",
