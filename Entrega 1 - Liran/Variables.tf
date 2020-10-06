@@ -14,6 +14,6 @@ variable "subnet" {
   default = "172.26.1.0/24"
 }
 
-#output "dns-publico" {
-#  value = aws_instance.terraform-Practico-Nuevo-instance.public_dns
-#}
+output "dns-publico" {
+  value = aws_instance.terraform-Practico-Nuevo-instance.public_ip
+}
