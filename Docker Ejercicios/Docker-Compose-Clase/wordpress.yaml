@@ -1,0 +1,35 @@
+version: "3"
+services:
+  db_srv:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+  networks:
+    mysql_internal:
+  environment: 
+    MYSQL_ROOT_PASSWORD: admin123
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: admin123
+  blog_srv:
+    depends_on:
+      - dv_srv
+    image: wordpress:latest
+    networks:
+      mysql_internal:
+      wordpress_public:
+    ports:
+        - "80:80"
+    environment:  
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: admin123
+      WORDPRESS_DB_HOST: db_srv:3306
+  volumes:
+    db_data:
+
+  networks:
+
+    mysql_internal: 
+      internal: true
+
+wordpress_public:
