@@ -1,0 +1,4 @@
+FROM centos:latest
+RUN yum -y update && yum -y install httpd 
+ADD ./index.html /var/www/html
+EXPOSE 80
